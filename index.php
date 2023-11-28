@@ -9,7 +9,7 @@ class Production {
     function __construct($_title,$_language,$_rating)
     {
         $this->setTitle($_title);
-        $this->language = $_language;         
+        $this->setLanguage($_language);       
         $this->getRating($_rating);
     }
 
@@ -31,9 +31,18 @@ class Production {
 
     }   
 
+    public function setLanguage($language) {
+        if($language != '' && strlen($language) <= 3 ) {
+            $this->language = $language;
+        } else {
+            $this->language = 'Errore inserimento lingua'; 
+        }
+
+    }  
+
 }
 
-$film1 = new Production ('Harry Potter e la Pietra Filosofale','ita',7.6);
+$film1 = new Production ('Harry Potter e la Pietra Filosofale','ital',7.6);
 $film2 = new Production ('Harry Potter e la Camera dei Segreti','ita',7.4);
 $film3 = new Production ('Harry Potter e il Prigioniero di Azkaban','ita',7.9);
 $film4 = new Production ('Harry Potter e il Calice di Fuoco','ita',7.7);
