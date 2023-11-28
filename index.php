@@ -8,7 +8,7 @@ class Production {
 
     function __construct($_title,$_language,$_rating)
     {
-        $this->title = $_title;
+        $this->setTitle($_title);
         $this->language = $_language;         
         $this->getRating($_rating);
     }
@@ -21,6 +21,15 @@ class Production {
         }
         
     }
+
+    public function setTitle($title) {
+        if($title != '') {
+            $this->title = $title;
+        } else {
+            $this->title = 'Titolo non disponibile'; 
+        }
+
+    }   
 
 }
 
@@ -44,8 +53,6 @@ $saga = [
     $film8,
 ];
 
-
-var_dump($film1);
 ?>
 
 <!DOCTYPE html>
