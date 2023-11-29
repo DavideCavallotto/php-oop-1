@@ -25,31 +25,23 @@ $serie5=  new Serie ('Stranger Things','eng', 8.7, 4);
 // 4 stagioni
 
 
-$productions = [
+$productions = [   
 
-    'movies' => [
-
-        $film1,
-        $film2,
-        $film3,
-        $film4,
-        $film5,
-        $film6,
-        $film7,
-        $film8,
-    ],
-
-    'series' => [
-        $serie1,
-        $serie2,
-        $serie3,
-        $serie4,
-        $serie5,
-    ]
+    $film1,
+    $film2,
+    $film3,
+    $film4,
+    $film5,
+    $film6,
+    $film7,
+    $film8,
+    $serie1,
+    $serie2,
+    $serie3,
+    $serie4,
+    $serie5,
+    
 ];
-
-var_dump($productions['series']);
-var_dump($productions['movies']);
 
 ?>
 
@@ -70,44 +62,24 @@ var_dump($productions['movies']);
                 <th scope="col">Titolo</th>
                 <th scope="col">Lingua</th>
                 <th scope="col">Voto</th>
+                <th scope="col">Durata</th>
+                <th scope="col">Stagioni</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($productions['movies'] as $film) { ?>
+            <?php foreach ($productions as $show) { ?>
                 <tr>             
-                    <td><?php echo $film->title ?></td>
-                    <td><?php echo $film->language ?></td>
-                    <td><?php echo $film->rating ?></td>
+                    <td><?php echo $show->title ?></td>
+                    <td><?php echo $show->language ?></td>
+                    <td><?php echo $show->rating ?></td>
+                    <td><?php if (isset($show->duration)) {echo $show->duration. ' ' . 'min';} else {echo '' ;}?></td>
+                    <td><?php if (isset($show->season)) {echo $show->season;} else {echo '' ;}?></td>
                     
                 </tr> 
 
             <?php } ?>
         </tbody>
     </table>
-
-    <table class="table table-dark table-striped">
-        <h1>Serie</h1>
-        <thead>
-            <tr>                
-                <th scope="col">Titolo</th>
-                <th scope="col">Lingua</th>
-                <th scope="col">Voto</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($productions['series'] as $serie) { ?>
-                <tr>             
-                    <td><?php echo $serie->title ?></td>
-                    <td><?php echo $serie->language ?></td>
-                    <td><?php echo $serie->rating ?></td>
-                    
-                </tr> 
-
-            <?php } ?>
-        </tbody>
-    </table>
-
-
    
 <?php    
 
