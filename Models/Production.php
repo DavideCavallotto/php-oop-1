@@ -3,7 +3,7 @@
 class Production {
     public $title;
     public $language;
-    public $rating;
+    public $rating;   
 
 
     function __construct($_title,$_language,$_rating)

@@ -56,7 +56,7 @@ $productions = [
 <body>
     
     <table class="table table-dark table-striped">
-        <h1>Film</h1>
+        <h1>Show</h1>
         <thead>
             <tr>                
                 <th scope="col">Titolo</th>
@@ -72,8 +72,8 @@ $productions = [
                     <td><?php echo $show->title ?></td>
                     <td><?php echo $show->language ?></td>
                     <td><?php echo $show->rating ?></td>
-                    <td><?php if (isset($show->duration)) {echo $show->duration. ' ' . 'min';} else {echo '' ;}?></td>
-                    <td><?php if (isset($show->season)) {echo $show->season;} else {echo '' ;}?></td>
+                    <td><?php echo $show instanceof Movie ? $show->getDuration() : ''; ?></td>                    
+                    <td><?php echo $show instanceof Serie ? $show->getSeason() : ''; ?></td>
                     
                 </tr> 
 

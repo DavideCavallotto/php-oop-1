@@ -10,8 +10,12 @@ class Serie extends Production {
         $this-> setSeason($_season);
     }    
 
-    public function setSeason($season) {
-        $this->season = $season;
+    public function setSeason($_season) {
+        $this->season = $_season;
+    }
+
+    public function getSeason() {
+        return $this->season; 
     }
 
    

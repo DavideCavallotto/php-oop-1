@@ -12,12 +12,17 @@ class Movie extends Production {
         $this-> setDuration($_duration);
     }    
 
-    public function SetProfit($profit) {
-        $this->profit = $profit;
+    public function SetProfit($_profit) {
+        $this->profit = $_profit;
     }
 
-    public function SetDuration($duration) {
-        $this->duration = $duration;
+    public function SetDuration($_duration) {
+        $this->duration = $_duration;
     }
+
+    public function getDuration() {
+        return $this->duration . 'min';
+    }
+    
 
 }
